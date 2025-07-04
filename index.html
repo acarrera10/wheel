@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ruleta Promocional</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="manifest" href="manifest.json"/>
+  <meta name="theme-color" content="#0066cc"/>
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <video autoplay muted loop playsinline webkit-playsinline id="background-video-landscape">
+    <source src="Video Trivias fondo-landscape.mp4" type="video/mp4"/>
+  </video>
+  <video autoplay muted loop playsinline webkit-playsinline id="background-video-vertical">
+    <source src="Video Trivias fondo-vertical.mp4" type="video/mp4"/>
+  </video>
+  <div class="container">
+    <div class="wheel-wrapper">
+      <canvas id="wheelCanvas" width="625" height="625"></canvas>
+      <img id="pointer" src="wheel_pointer_ok.png" alt="Pointer"/>
+      <div class="center-logos">
+      <canvas id="wheelCanvas"  width="625" height="625"></canvas>
+      <img id="pointer" src="wheel_pointer_ok.png" alt="Pointer"/>
+      <div class="center-logos">
+        <img src="bancor.webp" class="center-top" alt="Bancor"/>
+        <img src="punteada.webp" class="center-divider" alt="Divider"/>
+        <img src="cordoba.webp" class="center-bottom" alt="Córdoba"/>
+      </div>
+    </div>
+      <p id="instructions">TOCA LA RULETA PARA JUGAR</p>
+  </div><script src="script.js"</script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js');
+      });
+    }
+  </script>
+</body>
+</html>

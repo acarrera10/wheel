@@ -1,0 +1,87 @@
+
+/* Background videos full-screen */
+#background-video-landscape,
+#background-video-vertical {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Hide portrait video in landscape and vice versa */
+@media (orientation: portrait) {
+  #background-video-landscape { display: none !important; }
+}
+@media (orientation: landscape) {
+  #background-video-vertical { display: none !important; }
+}
+
+#background-video-landscape,
+#background-video-vertical {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+
+@media (orientation: portrait) {
+  #background-video-landscape { display: none; }
+}
+
+@media (orientation: landscape) {
+  #background-video-vertical { display: none; }
+}
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+body, html { margin:0; padding:0; overflow:hidden; height:100%; width:100%; }
+
+.container { position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); text-align:center; }
+.wheel-wrapper { position:relative; width:625px; height:625px; margin:auto; }
+#wheelCanvas { display:block; }
+#pointer {
+  position:absolute;
+  width:60px; height:auto;
+  top:-60px;
+  left:50%; transform:translateX(-50%);
+  z-index:2;
+}
+.center-logos {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 1;
+}
+.center-logos img { width:100%; height:auto; display:block; }
+.center-divider {
+  margin:4px 0;
+}
+#spinButton { margin-top:20px; padding:10px 30px; font-size:20px;
+  background-color:#0066cc; color:white; border:none; border-radius:10px; cursor:pointer; }
+#spinButton:hover { background-color:#0052a3; }
+
+
+#instructions {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 50px;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 24px;
+  color: #f16c42;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+  text-align: center;
+}
+
+
