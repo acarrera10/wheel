@@ -21,7 +21,8 @@ self.addEventListener('install', event => {
         './cordoba.webp',
         './punteada.webp',
         './icon-192.png',
-        './icon-512.png'
+        './icon-512.png',
+        './spin.mp3'
       ])
     )
   );

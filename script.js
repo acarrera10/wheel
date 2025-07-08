@@ -1,5 +1,6 @@
 const canvas = document.getElementById("wheelCanvas");
 const ctx = canvas.getContext("2d");
+const spinSound = new Audio('spin.mp3');
 
 // Predefined data
 const sliceColors = [
@@ -29,7 +30,8 @@ let angle = 0;
 let startAngle = 0;
 let spinning = false;
 let startTime = null;
-const spinDuration = 5000; // in ms
+// Spin duration in milliseconds
+const spinDuration = 10000; // in ms
 let targetRotation = 0;
 
 // Drawing function
@@ -117,6 +119,14 @@ function startSpin() {
   const finalAngle = sliceStartAngle + randomOffset;
   const rotations = 5;
   targetRotation = rotations * 2 * Math.PI + finalAngle;
+
+  // Reinicia el sonido si se está reproduciendo
+  spinSound.pause();
+  spinSound.currentTime = 0;
+  spinSound.play().catch(e => {
+    // Por si el navegador bloquea el autoplay sin interacción previa
+    console.warn("No se pudo reproducir el sonido:", e);
+  });
 
   requestAnimationFrame(animate);
 }
